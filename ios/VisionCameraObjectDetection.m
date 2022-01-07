@@ -46,6 +46,6 @@ static inline id detectObject(Frame* frame, NSArray* arguments) {
   return results;
 }
 
-VISION_EXPORT_FRAME_PROCESSOR(labelImage)
+VISION_EXPORT_FRAME_PROCESSOR(detectObject)
 
 @end

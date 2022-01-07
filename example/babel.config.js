@@ -16,7 +16,7 @@ module.exports = {
     [
       'react-native-reanimated/plugin',
       {
-        globals: ['__labelImage'],
+        globals: ['__detectObject'],
       },
     ],
   ],
