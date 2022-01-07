@@ -2,14 +2,14 @@
 <img align="right" src="https://github.com/mrousavy/react-native-vision-camera/blob/main/docs/static/img/frame-processors.gif?raw=true">
 </div>
 
-# vision-camera-image-labeler
+# vision-camera-object-detection
 
-A [VisionCamera](https://github.com/mrousavy/react-native-vision-camera) Frame Processor Plugin to label images using [**MLKit Vision** Image Labeling](https://developers.google.com/ml-kit/vision/image-labeling).
+A [VisionCamera](https://github.com/mrousavy/react-native-vision-camera) Frame Processor Plugin to label images using [**MLKit Vision** Object Detection](https://developers.google.com/ml-kit/vision/object-detection).
 
 ## Installation
 
 ```sh
-npm install vision-camera-image-labeler
+npm install vision-camera-object-detection
 cd ios && pod install
 ```
 
@@ -21,7 +21,7 @@ module.exports = {
     [
       'react-native-reanimated/plugin',
       {
-        globals: ['__labelImage'],
+        globals: ['detectObject'],
       },
     ],
 
@@ -33,13 +33,13 @@ module.exports = {
 ## Usage
 
 ```js
-import { labelImage } from "vision-camera-image-labeler";
+import { detectObject } from "vision-camera-object-detection";
 
 // ...
 
 const frameProcessor = useFrameProcessor((frame) => {
   'worklet';
-  const labels = labelImage(frame);
+  const labels = detectObject(frame);
 }, []);
 ```
 
