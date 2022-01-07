@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, ActivityIndicator } from 'react-native';
-import { useSharedValue } from 'react-native-reanimated';
+import { useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 import {
   Camera,
   useCameraDevices,
   useFrameProcessor,
 } from 'react-native-vision-camera';
-import { labelImage } from 'vision-camera-image-labeler';
+import { detectObject } from 'vision-camera-object-detection';
 
-import { Label } from './components/Label';
 
 export default function App() {
   const [hasPermission, setHasPermission] = useState(false);
@@ -24,16 +23,28 @@ export default function App() {
     })();
   }, []);
 
+  const objectBounds = useSharedValue({ top: 0, left: 0, right: 0, bottom: 0 })
+
   const frameProcessor = useFrameProcessor(
     (frame) => {
       'worklet';
-      const labels = labelImage(frame);
+      const object = detectObject(frame);
 
-      console.log('Labels:', labels);
-      currentLabel.value = labels[0]?.label;
+      console.log('Objects:', object);
+      // currentLabel.value = labels[0]?.label;
     },
     [currentLabel]
   );
+
+  // uses 'objectBounds' to position the rectangle on screen.
+    // smoothly updates on UI thread whenever 'objectBounds' is changed
+  const boxOverlayStyle = useAnimatedStyle(() => ({
+    position: 'absolute',
+    borderWidth: 2,
+    borderColor: 'white',
+    borderRadius: 10,
+    ...objectBounds.value
+  }), [objectBounds])
 
   return (
     <View style={styles.container}>
@@ -46,7 +57,7 @@ export default function App() {
             frameProcessor={frameProcessor}
             frameProcessorFps={3}
           />
-          <Label sharedValue={currentLabel} />
+          {/* <Label sharedValue={currentLabel} /> */}
         </>
       ) : (
         <ActivityIndicator size="large" color="white" />

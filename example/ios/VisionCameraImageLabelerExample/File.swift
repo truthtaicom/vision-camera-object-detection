@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  VisionCameraImageLabelerExample
+//  VisionCameraObjectDetectionExample
 //
 
 import Foundation

@@ -3,7 +3,7 @@ require "json"
 package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 
 Pod::Spec.new do |s|
-  s.name         = "vision-camera-image-labeler"
+  s.name         = "vision-camera-object-detection"
   s.version      = package["version"]
   s.summary      = package["description"]
   s.homepage     = package["homepage"]
@@ -11,10 +11,10 @@ Pod::Spec.new do |s|
   s.authors      = package["author"]
 
   s.platforms    = { :ios => "11.0" }
-  s.source       = { :git => "https://github.com/mrousavy/vision-camera-image-labeler.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/willcray/vision-camera-object-detection.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm}"
 
   s.dependency "React-Core"
-  s.dependency "GoogleMLKit/ImageLabeling"
+  s.dependency "GoogleMLKit/ObjectDetection"
 end

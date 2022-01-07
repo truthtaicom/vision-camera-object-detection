@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/willcray/Documents/GitHub/vision-camera-object-detection/example/ios/VisionCameraObjectDetectionExample.xcodeproj">
+      location = "group:VisionCameraObjectDetectionExample.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

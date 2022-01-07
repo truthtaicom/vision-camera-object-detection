@@ -1,5 +1,5 @@
 //
-//  VisionCameraImageLabeler.m
+//  VisionCameraObjectDetection.m
 //  VisionCameraExample
 //
 //  Created by Marc Rousavy on 06.05.21.
@@ -21,14 +21,14 @@
 
 + (MLKImageLabeler*) labeler {
   static MLKImageLabeler* labeler = nil;
-  if (labeler == nil) {
-    MLKImageLabelerOptions* options = [[MLKImageLabelerOptions alloc] init];
-    labeler = [MLKImageLabeler imageLabelerWithOptions:options];
-  }
+//  if (labeler == nil) {
+//    MLKImageLabelerOptions* options = [[MLKImageLabelerOptions alloc] init];
+//    labeler = [MLKImageLabeler imageLabelerWithOptions:options];
+//  }
   return labeler;
 }
 
-static inline id labelImage(Frame* frame, NSArray* arguments) {
+static inline id detectObject(Frame* frame, NSArray* arguments) {
   MLKVisionImage *image = [[MLKVisionImage alloc] initWithBuffer:frame.buffer];
   image.orientation = frame.orientation; // <-- TODO: is mirrored?
 
