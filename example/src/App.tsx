@@ -6,12 +6,12 @@ import {
   useCameraDevices,
   useFrameProcessor,
 } from 'react-native-vision-camera';
-import { detectObject } from 'vision-camera-object-detection';
+import { DetectedObject, detectObject } from 'vision-camera-object-detection';
 
 
 export default function App() {
   const [hasPermission, setHasPermission] = useState(false);
-  const currentLabel = useSharedValue('');
+  // const currentLabel = useSharedValue('');
 
   const devices = useCameraDevices();
   const device = devices.back;
@@ -28,16 +28,19 @@ export default function App() {
   const frameProcessor = useFrameProcessor(
     (frame) => {
       'worklet';
-      const object = detectObject(frame);
+      const objects: DetectedObject[] = detectObject(frame);
+      // const labels = detectObject(frame);
 
-      console.log('Objects:', object);
-      // currentLabel.value = labels[0]?.label;
+      console.log('Object:', objects[0]);
+      // console.log('Labels:', labels);
+      // currentLabel.value = labels[0];
     },
-    [currentLabel]
+    // [currentLabel]
+    []
   );
 
   // uses 'objectBounds' to position the rectangle on screen.
-    // smoothly updates on UI thread whenever 'objectBounds' is changed
+  // smoothly updates on UI thread whenever 'objectBounds' is changed
   const boxOverlayStyle = useAnimatedStyle(() => ({
     position: 'absolute',
     borderWidth: 2,

@@ -122,7 +122,7 @@ def enableHermes = project.ext.react.get("enableHermes", false);
 android {
     ndkVersion rootProject.ext.ndkVersion
 
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion 31
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -130,9 +130,9 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.visioncameraimagelabeler"
+        applicationId "com.example.visioncameraobjectdetection"
         minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
     }
@@ -196,7 +196,7 @@ dependencies {
         implementation jscFlavor
     }
 
-    implementation project(':visioncameraimagelabeler')
+    implementation project(':visioncameraobjectdetection')
 }
 
 // Run this once to be able to run the application with BUCK

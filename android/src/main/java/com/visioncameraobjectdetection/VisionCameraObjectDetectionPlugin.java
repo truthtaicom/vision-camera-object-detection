@@ -1,4 +1,4 @@
-package com.visioncameraimagelabeler;
+package com.visioncameraobjectdetection;
 
 import android.annotation.SuppressLint;
 import android.media.Image;
@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class VisionCameraImageLabelerPlugin extends FrameProcessorPlugin {
+public class VisionCameraObjectDetectionPlugin extends FrameProcessorPlugin {
   private final ImageLabeler labeler = ImageLabeling.getClient(ImageLabelerOptions.DEFAULT_OPTIONS);
 
   @Override
@@ -50,7 +50,7 @@ public class VisionCameraImageLabelerPlugin extends FrameProcessorPlugin {
     return null;
   }
 
-  VisionCameraImageLabelerPlugin() {
-    super("labelImage");
+  VisionCameraObjectDetectionPlugin() {
+    super("detectObject");
   }
 }

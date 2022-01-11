@@ -18,11 +18,11 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('VisionCameraImageLabeler_compileSdkVersion', 30)
+    compileSdkVersion safeExtGet('VisionCameraObjectDetection_compileSdkVersion', 30)
     ndkVersion "22.0.7026061"
     defaultConfig {
-        minSdkVersion safeExtGet('VisionCameraImageLabeler_minSdkVersion', 21)
-        targetSdkVersion safeExtGet('VisionCameraImageLabeler_targetSdkVersion', 30)
+        minSdkVersion safeExtGet('VisionCameraObjectDetection_minSdkVersion', 21)
+        targetSdkVersion safeExtGet('VisionCameraObjectDetection_targetSdkVersion', 30)
         versionCode 1
         versionName "1.0"
 

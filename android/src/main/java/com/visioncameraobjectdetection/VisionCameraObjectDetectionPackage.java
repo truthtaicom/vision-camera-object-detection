@@ -1,4 +1,4 @@
-package com.visioncameraimagelabeler;
+package com.visioncameraobjectdetection;
 
 import androidx.annotation.NonNull;
 
@@ -11,12 +11,12 @@ import com.mrousavy.camera.frameprocessor.FrameProcessorPlugin;
 import java.util.Collections;
 import java.util.List;
 
-public class VisionCameraImageLabelerPackage implements ReactPackage {
+public class VisionCameraObjectDetectionPackage implements ReactPackage {
   @NonNull
   @org.jetbrains.annotations.NotNull
   @Override
   public List<NativeModule> createNativeModules(@NonNull @org.jetbrains.annotations.NotNull ReactApplicationContext reactContext) {
-    FrameProcessorPlugin.register(new VisionCameraImageLabelerPlugin());
+    FrameProcessorPlugin.register(new VisionCameraObjectDetectionPlugin());
     return Collections.emptyList();
   }
 

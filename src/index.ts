@@ -1,20 +1,18 @@
 /* globals __labelImage */
 import type { Frame } from 'react-native-vision-camera';
 
-interface DetectedObject {
+export interface DetectedObject {
   /**
-   * A label describing the image, in english.
+   * Frame location
    */
-  location: {
-    top: number,
-    left: number,
-    right: number,
-    bottom: number
-  };
+  left: number,
+  top: number,
+  right: number,
+  bottom: number,
   /**
-   * A floating point number from 0 to 1, describing the confidence (percentage).
+   * TrackingID for an object
    */
-  confidence: number;
+  trackingID: number;
 }
 
 /**
