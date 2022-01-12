@@ -369,7 +369,7 @@ PODS:
   - vision-camera-object-detection (0.1.6):
     - GoogleMLKit/ObjectDetection
     - React-Core
-  - VisionCamera (2.6.1):
+  - VisionCamera (2.12.0):
     - React
     - React-callinvoker
     - React-Core
@@ -541,7 +541,7 @@ SPEC CHECKSUMS:
   ReactCommon: 149906e01aa51142707a10665185db879898e966
   RNReanimated: daebbd404c0cd9df6daa248d63dd940086bea9ff
   vision-camera-object-detection: 87bf0262aebe99c5ca00b7f737ef998c906a30a1
-  VisionCamera: dc481620431e31c1d6bbbc438d8a1d9c56f3d304
+  VisionCamera: 2acf8cebb8924b6105ad6448af3a64b7b9ee816e
   Yoga: 575c581c63e0d35c9a83f4b46d01d63abc1100ac
 
 PODFILE CHECKSUM: 4e1a1a8b09f9e090531e9f26f089c01ab25d6dbf
